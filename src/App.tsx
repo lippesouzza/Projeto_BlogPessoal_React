@@ -1,16 +1,21 @@
 import React from 'react';
-import Navbar from './components/estaticos/navbar/navbar';
-import Footer from './components/estaticos/footer/footer';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Navbar from './components/estaticos/navbar/Navbar';
+import Footer from './components/estaticos/footer/Footer';
 import Home from './paginas/home/Home';
 import './App.css';
 
+
 function App() {
   return (
-    <>
+    <Router>
       <Navbar />
-      <Home />
+      <Routes>
+        <Route path="/home" element={<Home />} />
+      </Routes>
       <Footer />
-    </>
+    </Router>
+
   );
 }
 
